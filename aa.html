@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="content" style="width: 300px; height: 30px; border:1px solid #e6e6e6; overflow: hidden;">
+		<ul id="con1" style="color: #333;height: 30px; line-height: 30px; background: #fc0;margin:0;">
+			<li id="con" style="height:30px;line-height:30px;">带敬爱靠上了解到爱111</li>
+			<li style="height:30px;line-height:30px;">带敬爱靠上了解到爱222</li>
+			<li style="height:30px;line-height:30px;">带敬爱靠上了解到爱333</li>
+			<li style="height:30px;line-height:30px;">带敬爱靠上了解到爱111</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+	        var con=document.getElementById("content");
+	        var cH = con.clientHeight;
+	        var c1=document.getElementById("con1");
+	        var uH = c1.clientHeight;
+	        var inv = 40;
+	 function move(){
+	 	//console.log(inv);
+	 	//console.log(c1.offsetHeight-cH);
+	 	//con.scrollTop = 80; 
+		if(con.scrollTop>=90){
+			con.scrollTop=0;
+			t(inv);
+		}
+		else{
+			con.scrollTop += 1;
+			
+			console.log(con.scrollTop%30);
+			if((con.scrollTop%30) == 0){
+				inv = 1000;
+			}else{
+				inv = 40;
+			}
+				t(inv);
+			
+			// console.log(uH);
+			// console.log(con.scrollTop);
+			// if(con.scrollTop == cH-uH){
+			// 	con.scrollTop = 0;
+			// }
+		}
+	 }
+
+	 function t(inv){
+	 	setTimeout("move()",inv);
+	 }
+	          
+	 t(inv);
+	</script>
+</body>
+</html>
