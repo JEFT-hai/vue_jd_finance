@@ -17,7 +17,7 @@ Vue.use(VueResource)
 Vue.use(Vuex)
 
 let router = new VueRouter({
-	mode: 'history',
+	// mode: 'history',
 	routes: [
 	  {path:'/',component: IndexPage},
 	  {path:'/index',component: IndexPage},
